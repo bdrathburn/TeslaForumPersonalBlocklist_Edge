@@ -1,0 +1,30 @@
+{
+    "author": "bdrathburn",
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "https://forums.tesla.com/*"
+            ]
+        }
+    ],
+    "description": "Chrome extension for hiding posts from specified users.",
+    "manifest_version": 2,
+    "name": "Tesla Forum Personal Blocklist",
+    "options_page": "options.html",
+    "permissions": [
+        "contextMenus",
+        "storage"
+    ],
+    "version": "1.0.0",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    }
+}
